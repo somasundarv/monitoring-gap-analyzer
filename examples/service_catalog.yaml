@@ -1,0 +1,20 @@
+services:
+  - name: checkout-service
+    criticality: tier1
+    owner: payments-team
+    aliases: ["checkout-api", "checkout"]
+
+  - name: recommendation-engine
+    criticality: tier2
+    owner: ml-platform-team
+    aliases: ["reco"]
+
+  - name: user-profile-service
+    criticality: tier1
+    owner: identity-team
+    aliases: ["user-profile"]
+
+  - name: legacy-batch-job
+    criticality: tier3
+    owner: data-eng-team
+    aliases: ["batch-job"]

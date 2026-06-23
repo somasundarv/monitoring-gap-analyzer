@@ -1,0 +1,20 @@
+groups:
+  - name: core-services
+    rules:
+      - alert: CheckoutHighErrorRate
+        expr: rate(http_requests_total{job="checkout-api",status=~"5.."}[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+          service: checkout
+        annotations:
+          summary: "Checkout service error rate above 5%"
+
+      - alert: UserProfileLatencyHigh
+        expr: histogram_quantile(0.99, rate(http_request_duration_seconds_bucket{job="user-profile"}[5m])) > 1
+        for: 10m
+        labels:
+          severity: warning
+          service: user-profile
+        annotations:
+          summary: "User profile p99 latency above 1s"

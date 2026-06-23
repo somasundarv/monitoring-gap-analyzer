@@ -1,0 +1,10 @@
+{
+  "title": "Recommendation Engine Health",
+  "tags": ["reco"],
+  "panels": [
+    {
+      "title": "Recommendation Latency",
+      "targets": [{"expr": "histogram_quantile(0.95, rate(reco_request_duration_seconds_bucket[5m]))"}]
+    }
+  ]
+}

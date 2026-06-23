@@ -1,0 +1,14 @@
+{
+  "title": "Checkout Service Overview",
+  "tags": ["checkout", "payments"],
+  "panels": [
+    {
+      "title": "Request Rate",
+      "targets": [{"expr": "rate(http_requests_total{job=\"checkout-api\"}[5m])"}]
+    },
+    {
+      "title": "Error Rate",
+      "targets": [{"expr": "rate(http_requests_total{job=\"checkout-api\",status=~\"5..\"}[5m])"}]
+    }
+  ]
+}
