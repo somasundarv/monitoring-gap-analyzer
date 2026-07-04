@@ -1,5 +1,7 @@
 # monitoring-gap-analyzer
 
+![CI](https://github.com/somasundarv/monitoring-gap-analyzer/actions/workflows/ci.yml/badge.svg)
+
 Cross-references your service catalog against Prometheus alert rules and Grafana
 dashboards to surface monitoring blind spots — services that are running in
 production with no alerting, no dashboard, or both.
